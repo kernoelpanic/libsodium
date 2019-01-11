@@ -88,6 +88,12 @@ crypto_core_ed25519_scalar_invert(unsigned char *recip, const unsigned char *s)
     return - sodium_is_zero(s, crypto_core_ed25519_SCALARBYTES);
 }
 
+void
+crypto_core_ed25519_scalar_mul(unsigned char *s, const unsigned char *a, const unsigned char *b)
+{
+		sc25519_mul(s, a, b);
+}
+
 /* 2^252+27742317777372353535851937790883648493 */
 static const unsigned char L[] = {
     0xed, 0xd3, 0xf5, 0x5c, 0x1a, 0x63, 0x12, 0x58, 0xd6, 0x9c, 0xf7,

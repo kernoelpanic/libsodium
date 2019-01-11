@@ -51,6 +51,11 @@ int crypto_core_ed25519_scalar_invert(unsigned char *recip, const unsigned char 
             __attribute__ ((nonnull));
 
 SODIUM_EXPORT
+void crypto_core_ed25519_scalar_mul(unsigned char *s, const unsigned char *a, const unsigned char *b)
+            __attribute__ ((nonnull));
+
+
+SODIUM_EXPORT
 void crypto_core_ed25519_scalar_negate(unsigned char *neg, const unsigned char *s)
             __attribute__ ((nonnull));
 
